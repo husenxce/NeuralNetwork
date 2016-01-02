@@ -1,0 +1,96 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'publish', '--force' ]
+2 info using npm@2.14.12
+3 info using node@v4.2.4
+4 warn using --force I sure hope you know what you are doing.
+5 verbose publish [ '.' ]
+6 silly cache add args [ '.', null ]
+7 verbose cache add spec .
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: '.',
+8 silly cache add   scope: null,
+8 silly cache add   name: null,
+8 silly cache add   rawSpec: '.',
+8 silly cache add   spec: '/home/hxce/Desktop/NeuralNetwork',
+8 silly cache add   type: 'directory' }
+9 verbose addLocalDirectory /home/hxce/.npm/artificial-neural-network/1.0.6/package.tgz not in flight; packing
+10 verbose tar pack [ '/home/hxce/.npm/artificial-neural-network/1.0.6/package.tgz',
+10 verbose tar pack   '/home/hxce/Desktop/NeuralNetwork' ]
+11 verbose tarball /home/hxce/.npm/artificial-neural-network/1.0.6/package.tgz
+12 verbose folder /home/hxce/Desktop/NeuralNetwork
+13 info prepublish artificial-neural-network@1.0.6
+14 verbose addLocalTarball adding from inside cache /home/hxce/.npm/artificial-neural-network/1.0.6/package.tgz
+15 silly cache afterAdd artificial-neural-network@1.0.6
+16 verbose afterAdd /home/hxce/.npm/artificial-neural-network/1.0.6/package/package.json not in flight; writing
+17 verbose afterAdd /home/hxce/.npm/artificial-neural-network/1.0.6/package/package.json written
+18 silly publish { name: 'artificial-neural-network',
+18 silly publish   version: '1.0.6',
+18 silly publish   description: 'Artificial neural network for data prediction.',
+18 silly publish   main: 'ANN.js',
+18 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+18 silly publish   keywords: [ 'Neural Network', 'Machine Learning' ],
+18 silly publish   author: { name: 'Hussain Mir Ali' },
+18 silly publish   license: 'MIT',
+18 silly publish   dependencies: { mathjs: '^2.2.0', q: '^1.4.1' },
+18 silly publish   devDependencies: {},
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'git+ssh://git@github.com/husenxce/NeuralNetwork.git' },
+18 silly publish   bugs: { url: 'https://github.com/husenxce/NeuralNetwork/issues' },
+18 silly publish   homepage: 'https://github.com/husenxce/NeuralNetwork#readme',
+18 silly publish   readme: '# Neural Network \n#[Author: Hussain Mir Ali]\nAn artificial neural network I created with a single hidden layer. This project has been written in JavaScript. The applications include disease prediction, optimizing workout routine and stock prediction. \n\n#Note: \nThis project uses batch gradient descent so it is best suited for binary classification which has a lower initial cost. But improvements to this algorithm will be made to run stochastic gradient descent.\n\n#Installation:\nnpm link: https://www.npmjs.com/package/artificial-neural-network\n\nTo use the project:\n\nrun: npm install -g artificial-neural-network\n\nand follow the sample usage provided below.\n\n#Advance Neural Network:\nAn advance version of this Neural Network algorithm will be avaiable at this link: http://corniax-machine-learning.herokuapp.com/  for purchase. \n\n#Sample usage:\n\n```javascript\nvar nn = new Neural_Network();\n\nnn.train_network(0.9, undefined /*optional threshold value*/, [\n    [1, 1, 1, 1, 0, 1],\n    [0, 1, 0, 0, 1, 0],\n    [1, 0, 1, 1, 1, 1],\n    [0, 1, 1, 0, 0, 0],\n    [1, 0, 0, 1, 0, 1],\n    [0, 0, 1, 0, 0, 0],\n    [1, 1, 0, 1, 1, 1],\n    [1, 0, 0, 1, 0, 1]\n], [\n    [1],\n    [0],\n    [1],\n    [1],\n    [0],\n    [1],\n    [1],\n    [0]\n]).then(console.log(nn.predict_result([[1,0,0,1,0,1]])));\n\n/*Output\nTraining ...\n\n{ iteration: 0, cost: 1.383523290363864 }\n{ iteration: 100, cost: 0.04008406998951956 }\n{ iteration: 200, cost: 0.016181475081737937 }\n{ iteration: 300, cost: 0.009841798424077541 }\n{ iteration: 400, cost: 0.0069985481625215226 }\n{ iteration: 500, cost: 0.005402782030422182 }\n{ iteration: 600, cost: 0.00438707375793734 }\n{ iteration: 700, cost: 0.003686178233980667 }\n{ iteration: 800, cost: 0.003174502735338863 }\n{ iteration: 900, cost: 0.0027851304470238596 }\n{ iteration: 1000, cost: 0.0024792318930790076 }\n{ _data: [ [ 0.030592746473324182 ] ],\n  _size: [ 1, 1 ],\n  _datatype: undefined }\n\n*/\n```\n',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: '68c5e05ae5184e7e85e22df753620ffa9c16291b',
+18 silly publish   _id: 'artificial-neural-network@1.0.6',
+18 silly publish   _shasum: 'bcc282005d0acdf9ddd9c5113484dc43bc1f2a70',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name artificial-neural-network
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/artificial-neural-network
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading /home/hxce/.npm/artificial-neural-network/1.0.6/package.tgz
+26 verbose request uri https://registry.npmjs.org/artificial-neural-network
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 9:56:09 PM
+29 verbose request using bearer token for auth
+30 verbose request id 5fe1ffb0d79e8a60
+31 http request PUT https://registry.npmjs.org/artificial-neural-network
+32 http 403 https://registry.npmjs.org/artificial-neural-network
+33 verbose headers { 'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=300',
+33 verbose headers   'content-length': '95',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Sat, 02 Jan 2016 05:56:11 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-iad2145-IAD',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1451714170.972811,VS0,VE974' }
+34 verbose request invalidating /home/hxce/.npm/registry.npmjs.org/artificial-neural-network on PUT
+35 error publish Failed PUT 403
+36 verbose stack Error: "You cannot publish over the previously published version 1.0.6." : artificial-neural-network
+36 verbose stack     at makeError (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+36 verbose stack     at CachingRegistryClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+36 verbose stack     at Request._callback (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+36 verbose stack     at Request.self.callback (/usr/lib/node_modules/npm/node_modules/request/request.js:198:22)
+36 verbose stack     at emitTwo (events.js:87:13)
+36 verbose stack     at Request.emit (events.js:172:7)
+36 verbose stack     at Request.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:1082:10)
+36 verbose stack     at emitOne (events.js:82:20)
+36 verbose stack     at Request.emit (events.js:169:7)
+36 verbose stack     at IncomingMessage.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+37 verbose statusCode 403
+38 verbose pkgid artificial-neural-network
+39 verbose cwd /home/hxce/Desktop/NeuralNetwork
+40 error Linux 4.2.0-16-generic
+41 error argv "/usr/bin/nodejs" "/usr/bin/npm" "publish" "--force"
+42 error node v4.2.4
+43 error npm  v2.14.12
+44 error code E403
+45 error "You cannot publish over the previously published version 1.0.6." : artificial-neural-network
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]

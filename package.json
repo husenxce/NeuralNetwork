@@ -1,6 +1,6 @@
 {
   "name": "artificial-neural-network",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Artificial neural network for data prediction.",
   "main": "ANN.js",
   "scripts": {

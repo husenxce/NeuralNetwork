@@ -15,7 +15,7 @@ run: npm install -g artificial-neural-network
 and follow the sample usage provided below.
 
 #Advanced Neural Network:
-An advance version of this Neural Network algorithm is available for $1 USD: http://corniax-machine-learning.herokuapp.com/  for purchase. 
+An advance version of this Neural Network algorithm is available for $1 USD: http://machine-learning-module.herokuapp.com/  for purchase. 
 
 #Sample usage:
 

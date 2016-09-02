@@ -1,0 +1,23 @@
+{
+  "name": "artificial-neural-network",
+  "description": "Artificial neural network for data prediction.",
+  "main": "ANN.js",
+  "authors": [
+    "Hussain Mir Ali"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Neural",
+    "Network",
+    "Machine",
+    "Learning"
+  ],
+  "homepage": "https://github.com/husenxce/NeuralNetwork",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

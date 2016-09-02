@@ -42,11 +42,15 @@ Neural_Network.prototype.sigmoid = function(z) {
     return sigmoid;
 };
 
-Neural_Network.prototype.forwardPropogation = function(X) {
-    var y_result, X = this.MathJS.matrix(X) || this.x;
+Neural_Network.prototype.forwardPropagation = function(X) {
+    var y_result, X = this.MathJS.matrix(X) || this.x, scope = {};
     this.z2 = this.MathJS.multiply(X, this.W1);
+    scope.z2 = this.z2;
+    this.z2 = this.MathJS.eval('z2', scope);
     this.a2 = this.sigmoid(this.z2);
     this.z3 = this.MathJS.multiply(this.a2, this.W2);
+    scope.z3 = this.z3;
+    this.z3 = this.MathJS.eval('z3', scope);
     y_result = this.sigmoid(this.z3);
     return y_result;
 };
@@ -65,7 +69,7 @@ Neural_Network.prototype.sigmoid_Derivative = function(z) {
 Neural_Network.prototype.costFunction = function() {
     var J;
     var scope = {};
-    this.y_result = this.forwardPropogation(this.x);
+    this.y_result = this.forwardPropagation(this.x);
     scope.y_result = this.y_result;
     scope.y = this.y;
     scope.x = this.x;
@@ -76,7 +80,7 @@ Neural_Network.prototype.costFunction = function() {
 };
 
 Neural_Network.prototype.costFunction_Derivative = function() {
-    this.y_result = this.forwardPropogation(this.x);
+    this.y_result = this.forwardPropagation(this.x);
     var scope = {};
     scope.y_result = this.y_result;
     scope.y = this.y;
@@ -114,6 +118,7 @@ Neural_Network.prototype.gradientDescent = function() {
         this.W1 = this.MathJS.eval('W1 - rate*dJdW1', scope);
         cost = this.costFunction()
         if (cost < (1 / (this.threshold||this.MathJS.exp(6)))) {
+            console.log("\nVisit http://intellingine.com/ for more algorithms.\n");
             defered.resolve();
             break;
         }
@@ -148,7 +153,7 @@ Neural_Network.prototype.train_network = function(learningRate, threshold, X, Y)
 };
 
 Neural_Network.prototype.predict_result = function(X) {
-    var y_result = this.forwardPropogation(X);
+    var y_result = this.forwardPropagation(X);
     return y_result;
 };
 

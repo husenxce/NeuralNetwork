@@ -13,8 +13,8 @@
   "author": "Hussain Mir Ali",
   "license": "MIT",
   "dependencies": {
-    "mathjs": "^2.2.0",
-    "q": "^1.4.1"
+    "mathjs": "^6.2.3",
+    "q": "^1.5.1"
   },
   "devDependencies": {},
   "repository": {

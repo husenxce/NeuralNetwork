@@ -118,7 +118,7 @@ Neural_Network.prototype.gradientDescent = function() {
         this.W1 = this.MathJS.eval('W1 - rate*dJdW1', scope);
         cost = this.costFunction()
         if (cost < (1 / (this.threshold||this.MathJS.exp(6)))) {
-            console.log("\nVisit http://intellingine.com/ for more algorithms.\n");
+            console.log("\nVisit http://www.softnami.com/dailycoding/signup.html to receive a coding question everyday.\n");
             defered.resolve();
             break;
         }

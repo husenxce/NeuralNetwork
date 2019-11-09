@@ -1,8 +1,8 @@
-# Neural Network 
+# Neural Network
 #[Author: Hussain Mir Ali]
-An artificial neural network I created with a single hidden layer. This project has been written in JavaScript. The applications include disease prediction, optimizing workout routine and stock prediction. 
+An artificial neural network I created with a single hidden layer. This project has been written in JavaScript. The applications include disease prediction, optimizing workout routine and stock prediction.
 
-#Note: 
+#Note:
 This project uses batch gradient descent so it is best suited for binary classification which has a lower initial cost. But improvements to this algorithm will be made to run stochastic gradient descent.
 
 #Installation:
@@ -15,14 +15,15 @@ run: npm install -g artificial-neural-network
 and follow the sample usage provided below.
 
 #Advanced Neural Network:
-An advance version of this Neural Network algorithm is available for $1 USD: http://machine-learning-module.herokuapp.com/  for purchase. 
+An advance version of this Neural Network algorithm is available for $1 USD: http://machine-learning-module.herokuapp.com/  for purchase.
 
 #Sample usage:
 
 ```javascript
-var nn = new Neural_Network();
+const Neural_Network = require('artificial-neural-network');
+const nn = new Neural_Network();
 
-nn.train_network(0.9, undefined /*optional threshold value*/, [
+nn.train_network(0.1, undefined /*optional threshold value*/, [
     [1, 1, 1, 1, 0, 1],
     [0, 1, 0, 0, 1, 0],
     [1, 0, 1, 1, 1, 1],

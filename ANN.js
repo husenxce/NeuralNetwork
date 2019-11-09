@@ -38,7 +38,7 @@ Neural_Network.prototype.sigmoid = function(z) {
         sigmoid;
 
     scope.ones = this.MathJS.ones(scope.z.size()[0], scope.z.size()[1]);
-    sigmoid = this.MathJS.eval('(ones+(e.^(z.*-1))).^-1', scope); //1/(1+e^(-z))
+    sigmoid = this.MathJS.evaluate('(ones+(e.^(z.*-1))).^-1', scope); //1/(1+e^(-z))
     return sigmoid;
 };
 
@@ -46,11 +46,11 @@ Neural_Network.prototype.forwardPropagation = function(X) {
     var y_result, X = this.MathJS.matrix(X) || this.x, scope = {};
     this.z2 = this.MathJS.multiply(X, this.W1);
     scope.z2 = this.z2;
-    this.z2 = this.MathJS.eval('z2', scope);
+    this.z2 = this.MathJS.evaluate('z2', scope);
     this.a2 = this.sigmoid(this.z2);
     this.z3 = this.MathJS.multiply(this.a2, this.W2);
     scope.z3 = this.z3;
-    this.z3 = this.MathJS.eval('z3', scope);
+    this.z3 = this.MathJS.evaluate('z3', scope);
     y_result = this.sigmoid(this.z3);
     return y_result;
 };
@@ -61,7 +61,7 @@ Neural_Network.prototype.sigmoid_Derivative = function(z) {
         },
         sigmoid_Derivative;
     scope.ones = this.MathJS.ones(z.size()[0], z.size()[1]);
-    sigmoid_Derivative = this.MathJS.eval('(e.^(z.*-1))./(ones+(e.^(z.*-1))).^2', scope); //(1+e^(-z))/(1+e^(-z))^2
+    sigmoid_Derivative = this.MathJS.evaluate('(e.^(z.*-1))./(ones+(e.^(z.*-1))).^2', scope); //(1+e^(-z))/(1+e^(-z))^2
 
     return sigmoid_Derivative;
 };
@@ -74,7 +74,7 @@ Neural_Network.prototype.costFunction = function() {
     scope.y = this.y;
     scope.x = this.x;
 
-    J = this.MathJS.sum(this.MathJS.eval('0.5*((y-y_result).^2)', scope))/this.x.size()[0];
+    J = this.MathJS.sum(this.MathJS.evaluate('0.5*((y-y_result).^2)', scope))/this.x.size()[0];
 
     return J;
 };
@@ -84,16 +84,16 @@ Neural_Network.prototype.costFunction_Derivative = function() {
     var scope = {};
     scope.y_result = this.y_result;
     scope.y = this.y;
-    scope.diff = this.MathJS.eval('-(y-y_result)', scope);
+    scope.diff = this.MathJS.evaluate('-(y-y_result)', scope);
     scope.sigmoid_Derivative_z3 = this.sigmoid_Derivative(this.z3);
 
-    var del_3 = this.MathJS.eval('diff.*sigmoid_Derivative_z3', scope);
+    var del_3 = this.MathJS.evaluate('diff.*sigmoid_Derivative_z3', scope);
     var dJdW2 = this.MathJS.multiply(this.MathJS.transpose(this.a2), del_3);
 
     scope.arrA = this.MathJS.multiply(del_3, this.MathJS.transpose(this.W2));
     scope.arrB = this.sigmoid_Derivative(this.z2);
 
-    var del_2 = this.MathJS.eval('arrA.*arrB',scope);
+    var del_2 = this.MathJS.evaluate('arrA.*arrB',scope);
     var dJdW1 = this.MathJS.multiply(this.MathJS.transpose(this.x), del_2);
 
     return [dJdW1, dJdW2];
@@ -114,8 +114,8 @@ Neural_Network.prototype.gradientDescent = function() {
         scope.rate = this.learningRate;
         scope.dJdW1 = gradient[0];
         scope.dJdW2 = gradient[1];
-        this.W2 = this.MathJS.eval('W2 - rate*dJdW2', scope);
-        this.W1 = this.MathJS.eval('W1 - rate*dJdW1', scope);
+        this.W2 = this.MathJS.evaluate('W2 - rate*dJdW2', scope);
+        this.W1 = this.MathJS.evaluate('W1 - rate*dJdW1', scope);
         cost = this.costFunction()
         if (cost < (1 / (this.threshold||this.MathJS.exp(6)))) {
             console.log("\nVisit http://www.softnami.com/dailycoding/signup.html to receive a coding question everyday.\n");
